@@ -1,0 +1,6 @@
+3.1:
+	The type of graph that should be used to solve this problem is a directional graph, also 
+	known as a DiGraph. This is because the assignment specifications mentioned that the connections 
+	listed in "connectedCities.csv" are unidirectional, meaning that edges connecting nodes are one-way. 
+	The nodes/vertices in the graph represent individual cities, while edges represent a unidirectional connection
+	between two cities. 

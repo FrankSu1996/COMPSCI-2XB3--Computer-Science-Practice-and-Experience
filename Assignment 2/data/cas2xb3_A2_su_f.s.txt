@@ -1,0 +1,12 @@
+COMP SCI 2XB3
+Full Name: Frank Su
+Student number: 001411435
+
+"This work being submitted is my individual work"- Frank Su, 2019-03-19
+
+Design decisions: First of all, make sure that "algs4.jar" is included in the build path.
+If compilation errors occur due to "class not found," I have put it in the lib folder so that 
+whoever is marking this assignment can add it directly. My design utilizes an enum type for the city name, 
+as enums have an associated integer number that can be used to represent vertices in a digraph much easier. 
+Thus, in "a2_out.txt", the names of the cities are the enum representations, which lacks spaces and dots in the name.
+i.e. "St. Louis" becomes "STLOUIS"

@@ -1,0 +1,15 @@
+COMP SCI 2XB3
+Full name: Frank Su
+Student number: 001411435
+THIS WORK BEING SUBMITTED IS MY OWN INDIVIDUAL WORK: Frank Su, 2019-02-18
+
+Design changes:
+First of all, instead of using the stopWatch api from the textbook library, I used StopWatch from 
+commons lang: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/time/StopWatch.html. 
+This is because the stopwatch from "algorithms 4" only times in milleseconds, which is insufficient for this assignment, 
+as many of the sorting methods sort the smaller arrays in much less time than millseconds, and the stopwatch would show 0.0 
+seconds for these cases. Commons lang StopWatch can time in nanoseconds, and thus is much more suitable. For quicksort,
+I utilized the shuffle method from "algorithms 4" in order to shuffle the array before partitioning. Finally, for heapsort,
+I followed the textbooks recommendations and kept 1-based indexing, as it is generally easier to implement heap functions such
+sink using 1-based indexing instead of 0-based. I had to thus make some modifications to isSorted() and greater() to also support
+1-based indexing. Finally, I chose to put the javadoc documentation inside the "doc" folder. 
