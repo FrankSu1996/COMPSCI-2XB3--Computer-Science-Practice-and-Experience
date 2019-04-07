@@ -1,6 +1,13 @@
 DFS: BOSTON, NEWYORKCITY, PITTSBURGH, COLUMBUS, CHICAGO, STLOUIS, KANSASCITY, MINNEAPOLIS
 BFS: BOSTON, NEWYORKCITY, PITTSBURGH, COLUMBUS, CHICAGO, MINNEAPOLIS
 
+Shortest path found using Dijkstra's algorithm: 
+
 City                 Meal Choice                                                            Cost of Meal        
 ---------------------------------------------------------------------------------------------------------
-ALBUQUERQUE          Premium Chicken Bacon Clubhouse (Grilled or Crispy) - Meal             $5.99               
+BOSTON               McChicken - Meal                                                       3.790000            
+NEWYORKCITY          Double Cheeseburger - Meal                                             4.380000            
+PITTSBURGH           McChicken - Meal                                                       3.790000            
+COLUMBUS             Double Cheeseburger - Meal                                             4.380000            
+CHICAGO              McChicken - Meal                                                       3.790000            
+MINNEAPOLIS          Double Cheeseburger - Meal                                             4.380000            

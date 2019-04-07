@@ -4,3 +4,23 @@
 	listed in "connectedCities.csv" are unidirectional, meaning that edges connecting nodes are one-way. 
 	The nodes/vertices in the graph represent individual cities, while edges represent a unidirectional connection
 	between two cities. 
+
+3.2:
+	Looking at the output for both BFS and DFS, we can see that DFS found a path of length 7 from Boston to
+	Minneapolis, while BFS found a path of length 5, and thus, we can conclude that BFS found the result in fewer steps.
+	This is because the BFS algorithm checks for all reachable vertices starting from a source vertex in a recursive manner, 
+	without consideration of the length of the path from the source vertex to the destination vertex. However, the DFS 
+	algorithm checks for connected vertices one length at a time starting from the source vertex, and thus, the output
+	of a DFS search will compute the shortest path from source to destination vertex (without restrictions). Thus, even if the
+	number of stops increases, DFS will always compute the shortest path, while BFS may not necessarily return the shortest path,
+	but instead of will compute all reachable vertexes from a source. 
+	
+3.4
+	The complexity of this problem using Dijkstra's algorithm is ElogV, where E is the number of edges, and V is the number of 
+	of vertices. This holds true as I have chosen to use a Priority Queue from algs4.jar library that implements the queue using
+	a binary heap, and thus the insert, delete-min, and decrease-key operations are all logV in complexity. Since I have chosen to 
+	separate the problem of finding the shortest path and choosing the selection at the restaurants, adding more restaurants
+	will not change the complexity of this problem. However, if both the number of stops and/or the number of cities are increased, 
+	this will increase the overall running time, although the overall complexity will still remain ElogV. The difference is that since
+	E and V are increased, the running time will increase in a logarithmic fashion. Adding more cities will increase V, while adding more
+	stops will increase the number of edges E. 

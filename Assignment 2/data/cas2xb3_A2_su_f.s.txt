@@ -4,9 +4,18 @@ Student number: 001411435
 
 "This work being submitted is my individual work"- Frank Su, 2019-03-19
 
+** TO GET THE OUTPUT, JUST RUN MAIN.JAVA IN THE "Client" PACKAGE
+** MAKE SURE "algs4.jar" IS INCLUDED IN THE BUILD PATH, IF FOR SOME REASON IT ISN'T, I INCLUDED IT IN THE "lib" FOLDER
+
 Design decisions: First of all, make sure that "algs4.jar" is included in the build path.
 If compilation errors occur due to "class not found," I have put it in the lib folder so that 
 whoever is marking this assignment can add it directly. My design utilizes an enum type for the city name, 
 as enums have an associated integer number that can be used to represent vertices in a digraph much easier. 
 Thus, in "a2_out.txt", the names of the cities are the enum representations, which lacks spaces and dots in the name.
-i.e. "St. Louis" becomes "STLOUIS"
+i.e. "St. Louis" becomes "STLOUIS." To compute the weight of the directed edges in order to compute the shortest path 
+using Dijkstra's algorithm, I used the Haversine formula, which can calculate the distance between two points on a sphere
+using their latitudes and longitudes, which are given in the data sets for this assignment. To simplify the code, I have
+included a conditional check in main that makes sure a McDonald's is within range of each restaurant, since the two lowest 
+cost items throughout the menu are both McDonald's items. Thus makes it obsolete to check for other restaurants, since 
+according to the specification, the restriction is based on cost only, and not the restaurant. I.e. you can visit the same
+restaurant in consecutive cities.Finally, I have included the JUnit test class for BFS and DFS in the "Graph" package. 

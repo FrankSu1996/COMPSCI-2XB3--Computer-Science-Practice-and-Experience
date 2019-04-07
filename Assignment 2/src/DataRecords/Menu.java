@@ -2,6 +2,7 @@ package DataRecords;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,10 +11,7 @@ import java.util.Scanner;
  *
  */
 public class Menu {
-	
-	public static MealChoice[] McDonaldsMenu;
-	public static MealChoice[] BurgerKingMenu;
-	public static MealChoice[] WendysMenu;
+	public static ArrayList<MealChoice> menu;
 	
 	/**
 	 * Class representing the individual choices of a menu
@@ -37,12 +35,8 @@ public class Menu {
 		}
 	}
 	
-	/**
-	 * Initializes the McDonalds menu from menu.csv
-	 */
-	public static void initMcDonaldsMenu() {
-		int counter = 0;
-		McDonaldsMenu = new MealChoice[18];
+	public static void initMenu() {
+		menu = new ArrayList<MealChoice>();
 		String fileName = "data/menu.csv";
 		File file = new File(fileName);
 		try {
@@ -60,78 +54,7 @@ public class Menu {
 				//create selection based on data
 				MealChoice selection = new MealChoice(choice, Price, proteinType);
 				//add selection to mcdonalds menu
-				McDonaldsMenu[counter] = selection;
-				counter++;
-				if (counter == 18)
-					return;
-			}
-			inputStream.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Initializes the Burger King menu from menu.csv
-	 */
-	public static void initBurgerKingMenu() {
-		int counter = 0;
-		BurgerKingMenu = new MealChoice[12];
-		String fileName = "data/menu.csv";
-		File file = new File(fileName);
-		try {
-			Scanner inputStream = new Scanner(file);
-			//skip mcdonalds items in the csv file
-			for (int i = 0; i < 19; i++)
-				inputStream.nextLine();
-			while(inputStream.hasNext()) {
-				//parse out data using split()
-				String line = inputStream.nextLine();
-				String[] values = line.split(",");
-				final String choice = values[1];
-				String price = values[2];
-				price = price.replace("$", "");
-				final double Price = Double.parseDouble(price);
-				final String proteinType = values[3];
-				//create new selection based on menu.csv, add to menu
-				MealChoice selection = new MealChoice(choice, Price, proteinType);
-				BurgerKingMenu[counter] = selection;
-				counter++;
-				if (counter == 12)
-					return;
-			}
-			inputStream.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Initializes the Wendys menu from menu.csv
-	 */
-	public static void initWendysMenu() {
-		int counter = 0;
-		WendysMenu = new MealChoice[10];
-		String fileName = "data/menu.csv";
-		File file = new File(fileName);
-		try {
-			Scanner inputStream = new Scanner(file);
-			//skip mcdonalds items in the csv file
-			for (int i = 0; i < 31; i++)
-				inputStream.nextLine();
-			while(inputStream.hasNext()) {
-				//parse out data using split()
-				String line = inputStream.nextLine();
-				String[] values = line.split(",");
-				final String choice = values[1];
-				String price = values[2];
-				price = price.replace("$", "");
-				final double Price = Double.parseDouble(price);
-				final String proteinType = values[3];
-				//create new selection based on menu.csv, add to menu
-				MealChoice selection = new MealChoice(choice, Price, proteinType);
-				WendysMenu[counter] = selection;
-				counter++;
+				menu.add(selection);
 			}
 			inputStream.close();
 		} catch (FileNotFoundException e) {
